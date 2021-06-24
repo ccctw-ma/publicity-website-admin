@@ -5,10 +5,20 @@
       <el-aside width="auto">
         <el-menu
           :unique-opened="true"
-          default-active="teamInfo"
+          default-active="banner"
           class="el-menu-vertical-demo"
           @select="handleSelect"
         >
+          <!--主页  -->
+          <el-submenu index="Index">
+            <template slot="title">
+              <i class="el-icon-s-home"></i>
+              <span slot="title">主页</span>
+            </template>
+            <el-menu-item index="banner">轮播图</el-menu-item>
+            <el-menu-item index="highlight">Highlight</el-menu-item>
+            <el-menu-item index="feature">Featute</el-menu-item>
+            </el-submenu>
           <!-- 团队概况 -->
           <el-submenu index="Team">
             <template slot="title">
@@ -174,9 +184,9 @@ export default {
         })
         .then((res) => {
           if (res.data === 1) {
-            this.$store.commit("changeLoginStatus",false)
+            this.$store.commit("changeLoginStatus", false);
             this.refresh();
-          }else{
+          } else {
             this.$message.error("登陆失败");
           }
         });

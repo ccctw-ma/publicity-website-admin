@@ -10,9 +10,9 @@ const store = new Vuex.Store({
     //当前是否在进行编辑操作
     isEdit:  false,
     //当前操作的数据库表
-    table: sessionStorage.getItem('table') ? JSON.parse(sessionStorage.getItem('table') + "") : "Team",
+    table: sessionStorage.getItem('table') ? JSON.parse(sessionStorage.getItem('table') + "") : "Index",
     //当前操作的表内子项的类别
-    kind: sessionStorage.getItem('kind') ? JSON.parse(sessionStorage.getItem('kind') + "") : "teamInfo",
+    kind: sessionStorage.getItem('kind') ? JSON.parse(sessionStorage.getItem('kind') + "") : "banner",
     //当前正在操作的文章内容
     notice: sessionStorage.getItem('notice') ? JSON.parse(sessionStorage.getItem('notice')) : {
       id: 0,
